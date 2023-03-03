@@ -39,7 +39,6 @@
   color: red;
 }
 
-
 @media (max-width: 720px) {
   .center-block-wide {
     display: block;
