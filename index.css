@@ -38,3 +38,25 @@
 .error-msg{
   color: red;
 }
+
+
+
+@media (max-width: 720px) {
+  .center-block-wide {
+    display: block;
+  }
+  .card {
+    min-width:25%;
+    max-width:50%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .center-block-wide {
+    display: block;
+   }
+  .card {
+    min-width:25%;
+    max-width:50%;
+  }
+}
