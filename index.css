@@ -25,6 +25,16 @@
   display: none;
 }
 
+.center-block {
+  display: flex;
+  justify-content: center;
+}
+
+.center-block-wide {
+  display: flex;
+  justify-content: space-between;
+}
+
 .error-msg{
   color: red;
 }

@@ -8,7 +8,7 @@ const HIDDEN_CLASS = 'hidden'
 
 const generateCatCard = (cat) => {
   return (
-    `<div data-card_id=${cat.id} class="card mx-2" style="width: 18rem">
+    `<div data-card_id=${cat.id} class="card mx-2" style="width: 20rem">
         <img
           src="${cat.image}"
           class="card-img-top"
@@ -17,9 +17,11 @@ const generateCatCard = (cat) => {
         <div class="card-body">
           <h5 class="card-title">${cat.name}</h5>
           <p class="card-text">${cat.description}</p>
-          <button type="button" data-action="open" class="btn btn-info">Open</button>
-          <button type="button" data-action="edit" class="btn btn-light">Edit</button>
-          <button type="button" data-action="delete" class="btn btn-danger">Delete</button>
+            <div class="center-block-wide">
+              <button type="button" data-action="open" class="btn btn-info">Open</button>
+              <button type="button" data-action="edit" class="btn btn-light">Edit</button>
+              <button type="button" data-action="delete" class="btn btn-danger">Delete</button>
+            </div>
         </div>
       </div>
       `)
@@ -34,8 +36,8 @@ $wrapper.addEventListener('click', async (event) => {
       const catId = $currentCard.dataset.card_id;
       try {
         const res = await api.deleteCat(catId);
-        const responce = await res.json();
-        if (!res.ok) throw Error(responce.message)
+        const response = await res.json();
+        if (!res.ok) throw Error(response.message)
         $currentCard.remove()
       } catch (error) {
         console.log(error);
@@ -82,8 +84,8 @@ document.forms.add_cats_form.addEventListener('submit', async (event) => {
     $modalAdd.classList.add(HIDDEN_CLASS)
     return event.target.reset()
   } else {
-    const responce = await res.json();
-    $formErrorMsg.innerText = responce.message
+    const response = await res.json();
+    $formErrorMsg.innerText = response.message
     return;
   }
 })
@@ -124,6 +126,6 @@ getCatsFunc();
 // возможность обновления кота
 // подробная информация о коте (модалка/отдельная страница)
 // обработать все ошибки со всех запросов
-// окультурить спиннер
+// окультурить спиннер - DONE
 // сделать красивой страницу
 // сделать мобильную верстку 
