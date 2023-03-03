@@ -28,6 +28,7 @@ class CatsApi {
   }
 }
 
+
 const DB_NAME = '1871mg';
 const api = new CatsApi(DB_NAME);
 
