@@ -63,6 +63,14 @@ $wrapper.addEventListener('click', async (event) => {
 
 $addBtn.addEventListener('click', () => {
   $modalAdd.classList.remove(HIDDEN_CLASS) // открываем модалку
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') { // по нажатию esc
+      $modalAdd.classList.add(HIDDEN_CLASS) // скрываем модалку
+    }
+  });
+
+
 })
 
 document.forms.add_cats_form.addEventListener('submit', async (event) => {
@@ -121,11 +129,11 @@ const getCatsFunc = async () => {
 getCatsFunc();
 
 // TODO:
-// закрытие модалки по области вокруг, escape, кнопки крестика в углу
+// закрытие модалки по области вокруг, escape (DONE), кнопки крестика в углу
 // сохранять форму добавления в LC
 // возможность обновления кота
 // подробная информация о коте (модалка/отдельная страница)
 // обработать все ошибки со всех запросов
-// окультурить спиннер - DONE
+    // окультурить спиннер - DONE
 // сделать красивой страницу
 // сделать мобильную верстку 
