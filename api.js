@@ -10,8 +10,24 @@ class CatsApi {
     getCurrentCat(id) {
         return fetch(`${this.url}/show/${id}`)
     }
+
+    deleteCat(id) {
+        return fetch(`${this.url}/delete/${id}`, {
+            method: 'DELETE',
+        })
+    }
+
+    addNewCat(data) {
+        return fetch(`${this.url}/add`, {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+    }
 }
 
-const dbName = '1871mg';
-const api = new CatsApi(dbName);
+const DB_NAME = '1871mg';
+const api = new CatsApi(DB_NAME);
 
